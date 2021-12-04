@@ -4,3 +4,4 @@ media/profile_pics/
 env/
 **/*.pyc
 **/__pycache__
+.env

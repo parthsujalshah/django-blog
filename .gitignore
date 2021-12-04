@@ -1,6 +1,6 @@
 *.sqlite3
 static/
-media/
+media/profile_pics/
 env/
 **/*.pyc
 **/__pycache__

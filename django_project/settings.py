@@ -49,7 +49,6 @@ INSTALLED_APPS = [
 
 if USE_S3:
     INSTALLED_APPS += [
-        'upload',
         'storages',
     ]
 

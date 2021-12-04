@@ -136,9 +136,9 @@ USE_TZ = True
 
 if USE_S3:
     # aws settings
-    S3_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID')
-    S3_SECRET_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_DEV_STORAGE_BUCKET_NAME')
+    AWS_ACCESS_KEY_ID = os.getenv('S3_ACCESS_KEY')
+    AWS_SECRET_ACCESS_KEY = os.getenv('S3_SECRET_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
     AWS_DEFAULT_ACL = 'authenticated-read'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}

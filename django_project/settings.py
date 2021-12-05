@@ -29,6 +29,7 @@ SECRET_KEY = 'pucuf$k%iyw4_+6ev%u@-$x8n$dq=ty0tumr$67y&99+v#@xb!'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+ALLOWED_HOSTS += os.getenv('EC2_DNS_NAME')
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
 IN_CLOUD = os.getenv('IN_CLOUD') == 'TRUE'

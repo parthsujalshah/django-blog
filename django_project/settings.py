@@ -28,8 +28,7 @@ SECRET_KEY = 'pucuf$k%iyw4_+6ev%u@-$x8n$dq=ty0tumr$67y&99+v#@xb!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'TRUE'
 
-ALLOWED_HOSTS = []
-ALLOWED_HOSTS += os.getenv('EC2_DNS_NAME')
+ALLOWED_HOSTS = ['*']
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
 IN_CLOUD = os.getenv('IN_CLOUD') == 'TRUE'

@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pucuf$k%iyw4_+6ev%u@-$x8n$dq=ty0tumr$67y&99+v#@xb!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG') == 'TRUE'
 
 ALLOWED_HOSTS = []
 ALLOWED_HOSTS += os.getenv('EC2_DNS_NAME')

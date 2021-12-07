@@ -1,0 +1,6 @@
+env/
+media/
+static/
+staticfiles/
+.gitignore
+posts.json

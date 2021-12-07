@@ -16,9 +16,6 @@ RUN apk add gcc musl-dev mariadb-connector-c-dev
 # Dependencies for Pillow
 RUN apk update \
     && apk add --virtual build-deps gcc python3-dev musl-dev \
-    && apk add postgresql \
-    && apk add postgresql-dev \
-    && pip install psycopg2 \
     && apk add jpeg-dev zlib-dev libjpeg \
     && pip install Pillow \
     && apk del build-deps
@@ -27,9 +24,9 @@ RUN apk update \
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-CMD ["chmod", "u+x", "/usr/src/app/docker/backend/entrypoint.sh"]
+CMD ["chmod", "u+x", "/usr/src/app/Docker/backend/entrypoint.sh"]
 CMD [ "python", "manage.py", "collectstatic" ]
-ENTRYPOINT ["/usr/src/app/docker/server/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/app/Docker/backend/entrypoint.sh"]
 
 # expose port
 EXPOSE 8000

@@ -2,7 +2,10 @@ version: '3.8'
 
 services:
   app-backend:
-    image: "${AWS_ACCOUNT_ID}.dkr.ecr.<aws-region>.amazonaws.com/django-ec2:app-backend"
+    image: parthsujalshah/djangoblog:backend-app
+    build:
+      context: .
+      dockerfile: Docker/backend/Dockerfile
     ports:
       - 8000:8000
     env_file:
@@ -10,7 +13,10 @@ services:
     command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
 
   nginx-proxy:
-    image: "${AWS_ACCOUNT_ID}dkr.ecr.<aws-region>.amazonaws.com/django-ec2:nginx-proxy"
+    image: parthsujalshah/djangoblog:proxy-nginx
+    build:
+        context: .
+        dockerfile: Docker/nginx/Dockerfile
     ports:
       - 8081:80
     depends_on:

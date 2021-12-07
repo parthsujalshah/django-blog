@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   app-backend:
-    image: <aws-account-id>.dkr.ecr.<aws-region>.amazonaws.com/django-ec2:app-backend
+    image: "${AWS_ACCOUNT_ID}.dkr.ecr.<aws-region>.amazonaws.com/django-ec2:app-backend"
     ports:
       - 8000:8000
     env_file:
       - ./.env
 
   nginx-proxy:
-    image: <aws-account-id>.dkr.ecr.<aws-region>.amazonaws.com/django-ec2:nginx-proxy
+    image: "${AWS_ACCOUNT_ID}dkr.ecr.<aws-region>.amazonaws.com/django-ec2:nginx-proxy"
     ports:
       - 8081:80
     depends_on:

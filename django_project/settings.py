@@ -100,7 +100,7 @@ if IN_CLOUD:
             'NAME': os.environ.get('DB_NAME', 'djangoblog'),
             'USER': os.environ.get('DB_USERNAME', 'djangoblog'),
             'PASSWORD': os.environ.get('DB_PASSWORD', 'djangoblog'),
-            'HOST': os.environ.get('DB_HOSTNAME', 'localhost'),
+            'HOST': os.environ.get('DB_HOSTNAME', 'localhost'), # endpoint of rds
             'PORT': os.environ.get('DB_PORT', 3306),
         }
     }

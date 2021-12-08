@@ -1,0 +1,2 @@
+before 1st pip install:
+    sudo apt-get install python3-dev libmysqlclient-dev

@@ -5,6 +5,8 @@ WORKDIR /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+EXPOSE 8000
+
 RUN apk add --no-cache mariadb-connector-c-dev
 RUN apk update \
 && apk add python3 python3-dev mariadb-dev build-base \
@@ -20,6 +22,6 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY ./ .
 
 CMD ["python", "manage.py", "runserver"]

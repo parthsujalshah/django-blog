@@ -1,0 +1,8 @@
+.env.example
+.env
+./env
+./media
+./staticfiles
+.gitignore
+db.sqlite3
+post.json

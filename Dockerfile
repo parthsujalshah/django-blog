@@ -22,6 +22,12 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY ./ .
+COPY . .
 
-CMD ["python", "manage.py", "runserver"]
+ENV USE_S3 FALSE
+ENV IN_CLOUD TRUE
+
+
+# CMD ["chmod", "u+x", "/usr/src/app/entrypoint.sh"]
+CMD ["chmod", "+x", "/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["sh", "/usr/src/app/entrypoint.sh"]
